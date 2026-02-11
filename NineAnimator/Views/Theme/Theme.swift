@@ -42,7 +42,7 @@ struct Theme {
     
     let tint: UIColor
     
-    let seperator: UIColor
+    let separator: UIColor
     
     let blurStyle: UIBlurEffect.Style
     
@@ -57,6 +57,10 @@ struct Theme {
     let keyboardAppearance: UIKeyboardAppearance
     
     let preferredStatusBarStyle: UIStatusBarStyle
+    
+    // iOS 15+ compatible properties
+    let systemMaterialBackground: UIColor
+    let systemGroupedBackground: UIColor
 }
 
 // MARK: - Accessing Theme object
@@ -135,6 +139,11 @@ extension Theme {
             // For collection view, set the background and scroll indicator color
             view.backgroundColor = theme.background
             view.indicatorStyle = theme.scrollIndicatorStyle
+            
+            // Apply modern configuration for iOS 15+
+            if #available(iOS 15.0, *) {
+                view.overrideUserInterfaceStyle = UITraitCollection.current.userInterfaceStyle
+            }
         case let view as UITableViewCell:
             // Update label colors
             if !view.determinedLabelColors {
@@ -201,38 +210,222 @@ extension Theme {
         
         let light = Theme(
             name: "light",
-            primaryText: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1),
-            secondaryText: #colorLiteral(red: 0.6352941176, green: 0.6352941176, blue: 0.6549019608, alpha: 1),
-            background: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1),
-            secondaryBackground: #colorLiteral(red: 0.937254902, green: 0.937254902, blue: 0.9568627451, alpha: 1),
-            translucentBackground: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1),
-            tint: #colorLiteral(red: 0.07843137255, green: 0.5568627451, blue: 1, alpha: 1),
-            seperator: #colorLiteral(red: 0.7, green: 0.7, blue: 0.7, alpha: 1),
-            blurStyle: .extraLight,
-            barStyle: .default,
-            backgroundBlurStyle: .dark,
-            scrollIndicatorStyle: .black,
+            primaryText: UIColor { traitCollection in
+                if #available(iOS 13.0, *) {
+                    return traitCollection.userInterfaceStyle == .dark ? .label : .label
+                } else {
+                    return #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+                }
+            },
+            secondaryText: UIColor { traitCollection in
+                if #available(iOS 13.0, *) {
+                    return traitCollection.userInterfaceStyle == .dark ? .secondaryLabel : .secondaryLabel
+                } else {
+                    return #colorLiteral(red: 0.6352941176, green: 0.6352941176, blue: 0.6549019608, alpha: 1)
+                }
+            },
+            background: UIColor { traitCollection in
+                if #available(iOS 13.0, *) {
+                    return traitCollection.userInterfaceStyle == .dark ? .systemBackground : .systemBackground
+                } else {
+                    return #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+                }
+            },
+            secondaryBackground: UIColor { traitCollection in
+                if #available(iOS 13.0, *) {
+                    return traitCollection.userInterfaceStyle == .dark ? .secondarySystemBackground : .secondarySystemBackground
+                } else {
+                    return #colorLiteral(red: 0.937254902, green: 0.937254902, blue: 0.9568627451, alpha: 1)
+                }
+            },
+            translucentBackground: UIColor { traitCollection in
+                if #available(iOS 13.0, *) {
+                    return traitCollection.userInterfaceStyle == .dark ? .systemBackground : .systemBackground
+                } else {
+                    return #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+                }
+            },
+            tint: UIColor { traitCollection in
+                if #available(iOS 13.0, *) {
+                    return traitCollection.userInterfaceStyle == .dark ? .systemBlue : .systemBlue
+                } else {
+                    return #colorLiteral(red: 0.07843137255, green: 0.5568627451, blue: 1, alpha: 1)
+                }
+            },
+            separator: UIColor { traitCollection in
+                if #available(iOS 13.0, *) {
+                    return traitCollection.userInterfaceStyle == .dark ? .separator : .separator
+                } else {
+                    return #colorLiteral(red: 0.7, green: 0.7, blue: 0.7, alpha: 1)
+                }
+            },
+            blurStyle: {
+                if #available(iOS 13.0, *) {
+                    return .systemUltraThinMaterial
+                } else {
+                    return .extraLight
+                }
+            }(),
+            barStyle: {
+                if #available(iOS 13.0, *) {
+                    return .default
+                } else {
+                    return .default
+                }
+            }(),
+            backgroundBlurStyle: {
+                if #available(iOS 13.0, *) {
+                    return .systemMaterial
+                } else {
+                    return .dark
+                }
+            }(),
+            scrollIndicatorStyle: {
+                if #available(iOS 13.0, *) {
+                    return .default
+                } else {
+                    return .black
+                }
+            }(),
             activityIndicatorStyle: lightActivityIndicatorStyle,
-            keyboardAppearance: .light,
-            preferredStatusBarStyle: .default
+            keyboardAppearance: {
+                if #available(iOS 13.0, *) {
+                    return .default
+                } else {
+                    return .light
+                }
+            }(),
+            preferredStatusBarStyle: {
+                if #available(iOS 13.0, *) {
+                    return .default
+                } else {
+                    return .default
+                }
+            }(),
+            systemMaterialBackground: UIColor { traitCollection in
+                if #available(iOS 13.0, *) {
+                    return traitCollection.userInterfaceStyle == .dark ? .systemMaterial : .systemMaterial
+                } else {
+                    return #colorLiteral(red: 0.937254902, green: 0.937254902, blue: 0.9568627451, alpha: 1)
+                }
+            },
+            systemGroupedBackground: UIColor { traitCollection in
+                if #available(iOS 13.0, *) {
+                    return traitCollection.userInterfaceStyle == .dark ? .systemGroupedBackground : .systemGroupedBackground
+                } else {
+                    return #colorLiteral(red: 0.937254902, green: 0.937254902, blue: 0.9568627451, alpha: 1)
+                }
+            }
         )
         
         let dark = Theme(
             name: "dark",
-            primaryText: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1),
-            secondaryText: #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1),
-            background: #colorLiteral(red: 0.1600990295, green: 0.1600990295, blue: 0.1600990295, alpha: 1),
-            secondaryBackground: #colorLiteral(red: 0.1326085031, green: 0.1326085031, blue: 0.1326085031, alpha: 1),
-            translucentBackground: #colorLiteral(red: 0.093, green: 0.093, blue: 0.093, alpha: 1), // Really tried my best to match this color...still
-            tint: #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1),
-            seperator: #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1),
-            blurStyle: .dark,
-            barStyle: .black,
-            backgroundBlurStyle: .regular,
-            scrollIndicatorStyle: .white,
+            primaryText: UIColor { traitCollection in
+                if #available(iOS 13.0, *) {
+                    return traitCollection.userInterfaceStyle == .dark ? .label : .label
+                } else {
+                    return #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+                }
+            },
+            secondaryText: UIColor { traitCollection in
+                if #available(iOS 13.0, *) {
+                    return traitCollection.userInterfaceStyle == .dark ? .secondaryLabel : .secondaryLabel
+                } else {
+                    return #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
+                }
+            },
+            background: UIColor { traitCollection in
+                if #available(iOS 13.0, *) {
+                    return traitCollection.userInterfaceStyle == .dark ? .systemBackground : .systemBackground
+                } else {
+                    return #colorLiteral(red: 0.1600990295, green: 0.1600990295, blue: 0.1600990295, alpha: 1)
+                }
+            },
+            secondaryBackground: UIColor { traitCollection in
+                if #available(iOS 13.0, *) {
+                    return traitCollection.userInterfaceStyle == .dark ? .secondarySystemBackground : .secondarySystemBackground
+                } else {
+                    return #colorLiteral(red: 0.1326085031, green: 0.1326085031, blue: 0.1326085031, alpha: 1)
+                }
+            },
+            translucentBackground: UIColor { traitCollection in
+                if #available(iOS 13.0, *) {
+                    return traitCollection.userInterfaceStyle == .dark ? .systemBackground : .systemBackground
+                } else {
+                    return #colorLiteral(red: 0.093, green: 0.093, blue: 0.093, alpha: 1)
+                }
+            },
+            tint: UIColor { traitCollection in
+                if #available(iOS 13.0, *) {
+                    return traitCollection.userInterfaceStyle == .dark ? .systemPurple : .systemPurple
+                } else {
+                    return #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
+                }
+            },
+            separator: UIColor { traitCollection in
+                if #available(iOS 13.0, *) {
+                    return traitCollection.userInterfaceStyle == .dark ? .separator : .separator
+                } else {
+                    return #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
+                }
+            },
+            blurStyle: {
+                if #available(iOS 13.0, *) {
+                    return .systemChromeMaterial
+                } else {
+                    return .dark
+                }
+            }(),
+            barStyle: {
+                if #available(iOS 13.0, *) {
+                    return .default
+                } else {
+                    return .black
+                }
+            }(),
+            backgroundBlurStyle: {
+                if #available(iOS 13.0, *) {
+                    return .systemMaterial
+                } else {
+                    return .regular
+                }
+            }(),
+            scrollIndicatorStyle: {
+                if #available(iOS 13.0, *) {
+                    return .default
+                } else {
+                    return .white
+                }
+            }(),
             activityIndicatorStyle: darkActivityIndicatorStyle,
-            keyboardAppearance: .dark,
-            preferredStatusBarStyle: .lightContent
+            keyboardAppearance: {
+                if #available(iOS 13.0, *) {
+                    return .dark
+                } else {
+                    return .dark
+                }
+            }(),
+            preferredStatusBarStyle: {
+                if #available(iOS 13.0, *) {
+                    return .default
+                } else {
+                    return .lightContent
+                }
+            }(),
+            systemMaterialBackground: UIColor { traitCollection in
+                if #available(iOS 13.0, *) {
+                    return traitCollection.userInterfaceStyle == .dark ? .systemMaterial : .systemMaterial
+                } else {
+                    return #colorLiteral(red: 0.1326085031, green: 0.1326085031, blue: 0.1326085031, alpha: 1)
+                }
+            },
+            systemGroupedBackground: UIColor { traitCollection in
+                if #available(iOS 13.0, *) {
+                    return traitCollection.userInterfaceStyle == .dark ? .systemGroupedBackground : .systemGroupedBackground
+                } else {
+                    return #colorLiteral(red: 0.1326085031, green: 0.1326085031, blue: 0.1326085031, alpha: 1)
+                }
+            }
         )
         
         return [ light.name: light, dark.name: dark ]

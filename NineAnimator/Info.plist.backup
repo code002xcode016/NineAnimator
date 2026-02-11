@@ -24,8 +24,6 @@
 			<array>
 				<string>nineanimator.config</string>
 			</array>
-        <key>LSMinimumSystemVersion</key>
-        <string>15.0</string>
 		</dict>
 	</array>
 	<key>CFBundleExecutable</key>
@@ -44,8 +42,6 @@
 				<array>
 					<string>9 Testboi</string>
 				</array>
-        <key>LSMinimumSystemVersion</key>
-        <string>15.0</string>
 			</dict>
 			<key>Anudeep's Colossus</key>
 			<dict>
@@ -57,8 +53,6 @@
 				</array>
 				<key>DisplayName</key>
 				<string>Colossus</string>
-        <key>LSMinimumSystemVersion</key>
-        <string>15.0</string>
 			</dict>
 			<key>B'day by Nsx</key>
 			<dict>
@@ -70,8 +64,6 @@
 				</array>
 				<key>DisplayName</key>
 				<string>B'day</string>
-        <key>LSMinimumSystemVersion</key>
-        <string>15.0</string>
 			</dict>
 			<key>Bald Man</key>
 			<dict>
@@ -81,8 +73,6 @@
 				<array>
 					<string>Bald Man</string>
 				</array>
-        <key>LSMinimumSystemVersion</key>
-        <string>15.0</string>
 			</dict>
 			<key>Blush Max Glow</key>
 			<dict>
@@ -94,8 +84,6 @@
 				</array>
 				<key>DisplayName</key>
 				<string>Blush</string>
-        <key>LSMinimumSystemVersion</key>
-        <string>15.0</string>
 			</dict>
 			<key>Fox</key>
 			<dict>
@@ -105,8 +93,6 @@
 				<array>
 					<string>Fox</string>
 				</array>
-        <key>LSMinimumSystemVersion</key>
-        <string>15.0</string>
 			</dict>
 			<key>Furwa's Theme</key>
 			<dict>
@@ -116,8 +102,6 @@
 				<array>
 					<string>Furwa's Theme</string>
 				</array>
-        <key>LSMinimumSystemVersion</key>
-        <string>15.0</string>
 			</dict>
 			<key>Handwriting</key>
 			<dict>
@@ -129,8 +113,6 @@
 				</array>
 				<key>DisplayName</key>
 				<string>Handwriting</string>
-        <key>LSMinimumSystemVersion</key>
-        <string>15.0</string>
 			</dict>
 			<key>NsxHalloween</key>
 			<dict>
@@ -140,8 +122,6 @@
 				<array>
 					<string>NsxHalloween</string>
 				</array>
-        <key>LSMinimumSystemVersion</key>
-        <string>15.0</string>
 			</dict>
 			<key>Nsxtop's 9</key>
 			<dict>
@@ -151,8 +131,6 @@
 				<array>
 					<string>Nsxtop's 9</string>
 				</array>
-        <key>LSMinimumSystemVersion</key>
-        <string>15.0</string>
 			</dict>
 			<key>Rounded Cotton Candy</key>
 			<dict>
@@ -164,8 +142,6 @@
 				</array>
 				<key>DisplayName</key>
 				<string>Cotton Candy</string>
-        <key>LSMinimumSystemVersion</key>
-        <string>15.0</string>
 			</dict>
 			<key>Sandman's Corner</key>
 			<dict>
@@ -177,8 +153,6 @@
 				</array>
 				<key>DisplayName</key>
 				<string>Corner</string>
-        <key>LSMinimumSystemVersion</key>
-        <string>15.0</string>
 			</dict>
 			<key>Twodi Dark</key>
 			<dict>
@@ -188,8 +162,6 @@
 				<array>
 					<string>Twodi Dark</string>
 				</array>
-        <key>LSMinimumSystemVersion</key>
-        <string>15.0</string>
 			</dict>
 			<key>Twodi Light</key>
 			<dict>
@@ -199,8 +171,6 @@
 				<array>
 					<string>Twodi Light</string>
 				</array>
-        <key>LSMinimumSystemVersion</key>
-        <string>15.0</string>
 			</dict>
 			<key>Twodiback</key>
 			<dict>
@@ -210,8 +180,6 @@
 				<array>
 					<string>Twodiback</string>
 				</array>
-        <key>LSMinimumSystemVersion</key>
-        <string>15.0</string>
 			</dict>
 			<key>Tydox Square</key>
 			<dict>
@@ -221,8 +189,6 @@
 				<array>
 					<string>Tydox Square</string>
 				</array>
-        <key>LSMinimumSystemVersion</key>
-        <string>15.0</string>
 			</dict>
 			<key>Tydox's 9</key>
 			<dict>
@@ -232,8 +198,6 @@
 				<array>
 					<string>Tydox's 9</string>
 				</array>
-        <key>LSMinimumSystemVersion</key>
-        <string>15.0</string>
 			</dict>
 			<key>Use's Inverted</key>
 			<dict>
@@ -243,8 +207,6 @@
 				<array>
 					<string>Use's Inverted</string>
 				</array>
-        <key>LSMinimumSystemVersion</key>
-        <string>15.0</string>
 			</dict>
 			<key>Zeref's Collection</key>
 			<dict>
@@ -256,14 +218,8 @@
 				</array>
 				<key>DisplayName</key>
 				<string>Collection</string>
-        <key>LSMinimumSystemVersion</key>
-        <string>15.0</string>
 			</dict>
-        <key>LSMinimumSystemVersion</key>
-        <string>15.0</string>
 		</dict>
-        <key>LSMinimumSystemVersion</key>
-        <string>15.0</string>
 	</dict>
 	<key>CFBundleIcons~ipad</key>
 	<dict>
@@ -275,8 +231,6 @@
 				<array>
 					<string>9 Testboi</string>
 				</array>
-        <key>LSMinimumSystemVersion</key>
-        <string>15.0</string>
 			</dict>
 			<key>Anudeep's Colossus</key>
 			<dict>
@@ -284,8 +238,6 @@
 				<array>
 					<string>Anudeep's Colossus</string>
 				</array>
-        <key>LSMinimumSystemVersion</key>
-        <string>15.0</string>
 			</dict>
 			<key>B'day by Nsx</key>
 			<dict>
@@ -293,8 +245,6 @@
 				<array>
 					<string>B'day by Nsx</string>
 				</array>
-        <key>LSMinimumSystemVersion</key>
-        <string>15.0</string>
 			</dict>
 			<key>Bald Man</key>
 			<dict>
@@ -302,8 +252,6 @@
 				<array>
 					<string>Bald Man</string>
 				</array>
-        <key>LSMinimumSystemVersion</key>
-        <string>15.0</string>
 			</dict>
 			<key>Blush Max Glow</key>
 			<dict>
@@ -315,8 +263,6 @@
 				</array>
 				<key>DisplayName</key>
 				<string>Blush</string>
-        <key>LSMinimumSystemVersion</key>
-        <string>15.0</string>
 			</dict>
 			<key>Fox</key>
 			<dict>
@@ -324,8 +270,6 @@
 				<array>
 					<string>Fox</string>
 				</array>
-        <key>LSMinimumSystemVersion</key>
-        <string>15.0</string>
 			</dict>
 			<key>Furwa's Theme</key>
 			<dict>
@@ -333,8 +277,6 @@
 				<array>
 					<string>Furwa's Theme</string>
 				</array>
-        <key>LSMinimumSystemVersion</key>
-        <string>15.0</string>
 			</dict>
 			<key>Handwriting</key>
 			<dict>
@@ -342,8 +284,6 @@
 				<array>
 					<string>Handwriting</string>
 				</array>
-        <key>LSMinimumSystemVersion</key>
-        <string>15.0</string>
 			</dict>
 			<key>NsxHalloween</key>
 			<dict>
@@ -351,8 +291,6 @@
 				<array>
 					<string>NsxHalloween</string>
 				</array>
-        <key>LSMinimumSystemVersion</key>
-        <string>15.0</string>
 			</dict>
 			<key>Nsxtop's 9</key>
 			<dict>
@@ -360,8 +298,6 @@
 				<array>
 					<string>Nsxtop's 9</string>
 				</array>
-        <key>LSMinimumSystemVersion</key>
-        <string>15.0</string>
 			</dict>
 			<key>Rounded Cotton Candy</key>
 			<dict>
@@ -373,8 +309,6 @@
 				</array>
 				<key>DisplayName</key>
 				<string>Cotton Candy</string>
-        <key>LSMinimumSystemVersion</key>
-        <string>15.0</string>
 			</dict>
 			<key>Sandman's Corner</key>
 			<dict>
@@ -386,8 +320,6 @@
 				</array>
 				<key>DisplayName</key>
 				<string>Corner</string>
-        <key>LSMinimumSystemVersion</key>
-        <string>15.0</string>
 			</dict>
 			<key>Twodi Dark</key>
 			<dict>
@@ -395,8 +327,6 @@
 				<array>
 					<string>Twodi Dark</string>
 				</array>
-        <key>LSMinimumSystemVersion</key>
-        <string>15.0</string>
 			</dict>
 			<key>Twodi Light</key>
 			<dict>
@@ -404,8 +334,6 @@
 				<array>
 					<string>Twodi Light</string>
 				</array>
-        <key>LSMinimumSystemVersion</key>
-        <string>15.0</string>
 			</dict>
 			<key>Twodiback</key>
 			<dict>
@@ -413,8 +341,6 @@
 				<array>
 					<string>Twodiback</string>
 				</array>
-        <key>LSMinimumSystemVersion</key>
-        <string>15.0</string>
 			</dict>
 			<key>Tydox Square</key>
 			<dict>
@@ -422,8 +348,6 @@
 				<array>
 					<string>Tydox Square</string>
 				</array>
-        <key>LSMinimumSystemVersion</key>
-        <string>15.0</string>
 			</dict>
 			<key>Tydox's 9</key>
 			<dict>
@@ -431,8 +355,6 @@
 				<array>
 					<string>Tydox's 9</string>
 				</array>
-        <key>LSMinimumSystemVersion</key>
-        <string>15.0</string>
 			</dict>
 			<key>Use's Inverted</key>
 			<dict>
@@ -440,8 +362,6 @@
 				<array>
 					<string>Use's Inverted</string>
 				</array>
-        <key>LSMinimumSystemVersion</key>
-        <string>15.0</string>
 			</dict>
 			<key>Zeref's Collection</key>
 			<dict>
@@ -449,14 +369,8 @@
 				<array>
 					<string>Zeref's Collection</string>
 				</array>
-        <key>LSMinimumSystemVersion</key>
-        <string>15.0</string>
 			</dict>
-        <key>LSMinimumSystemVersion</key>
-        <string>15.0</string>
 		</dict>
-        <key>LSMinimumSystemVersion</key>
-        <string>15.0</string>
 	</dict>
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
@@ -479,8 +393,6 @@
 			<array>
 				<string>nineanimator</string>
 			</array>
-        <key>LSMinimumSystemVersion</key>
-        <string>15.0</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeRole</key>
@@ -491,8 +403,6 @@
 			<array>
 				<string>discord-573345011610026006</string>
 			</array>
-        <key>LSMinimumSystemVersion</key>
-        <string>15.0</string>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
@@ -570,14 +480,8 @@
 			<dict>
 				<key>public.filename-extension</key>
 				<string>naconfig</string>
-        <key>LSMinimumSystemVersion</key>
-        <string>15.0</string>
 			</dict>
-        <key>LSMinimumSystemVersion</key>
-        <string>15.0</string>
 		</dict>
 	</array>
-        <key>LSMinimumSystemVersion</key>
-        <string>15.0</string>
 </dict>
 </plist>
