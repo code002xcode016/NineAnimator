@@ -94,6 +94,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Recover any pending download tasks
         OfflineContentManager.shared.recoverPendingTasks()
         
+        // Configure modern app appearance
+        configureModernAppearance()
+        
         // Finish Setup
         setupImageCacher()
         setupCrashHandler()
@@ -102,6 +105,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NineAnimator.default.cloud.renewAvailabilityData()
         
         return true
+    }
+    
+    /// Configure modern UI appearance for iOS 15+
+    private func configureModernAppearance() {
+        if #available(iOS 15.0, *) {
+            // Configure navigation bar appearance
+            let navigationBarAppearance = UINavigationBarAppearance()
+            navigationBarAppearance.configureWithOpaqueBackground()
+            navigationBarAppearance.backgroundColor = UIColor.systemBackground
+            
+            UINavigationBar.appearance().standardAppearance = navigationBarAppearance
+            UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
+            UINavigationBar.appearance().compactAppearance = navigationBarAppearance
+            
+            // Configure tab bar appearance
+            let tabBarAppearance = UITabBarAppearance()
+            tabBarAppearance.configureWithOpaqueBackground()
+            tabBarAppearance.backgroundColor = UIColor.systemBackground
+            
+            UITabBar.appearance().standardAppearance = tabBarAppearance
+            UITabBar.appearance().compactAppearance = tabBarAppearance
+            UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
+            
+            // Configure toolbar appearance
+            let toolbarAppearance = UIToolbarAppearance()
+            toolbarAppearance.configureWithOpaqueBackground()
+            toolbarAppearance.backgroundColor = UIColor.systemBackground
+            
+            UIToolbar.appearance().standardAppearance = toolbarAppearance
+        }
+        
+        // Set global tint color
+        UIView.appearance().tintColor = UIColor.systemBlue
     }
     
     func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
