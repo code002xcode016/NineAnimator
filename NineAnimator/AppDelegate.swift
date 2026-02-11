@@ -203,7 +203,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 // MARK: - Task Pool Management
 extension AppDelegate {
-    fileprivate struct HashingTaskWrapper: Hashable {
+    /// Wrapper for managing tasks in a set
+    fileprivate struct TaskWrapper: Hashable {
         private let wrappedObject: NineAnimatorAsyncTask
         private let identifier: ObjectIdentifier
         
@@ -216,25 +217,23 @@ extension AppDelegate {
             hasher.combine(identifier)
         }
         
-        static func == (lhs: AppDelegate.HashingTaskWrapper, rhs: AppDelegate.HashingTaskWrapper) -> Bool {
+        static func == (lhs: AppDelegate.TaskWrapper, rhs: AppDelegate.TaskWrapper) -> Bool {
             lhs.identifier == rhs.identifier
         }
     }
     
     /// Submit the task to the AppDelegate's internal task pool
     func submitTask(_ task: NineAnimatorAsyncTask?) {
-        if let task = task {
-            let wrapper = HashingTaskWrapper(wrapped: task)
-            taskPool.insert(wrapper)
-        }
+        guard let task = task else { return }
+        let wrapper = TaskWrapper(wrapped: task)
+        taskPool.insert(wrapper)
     }
     
     /// Remove the task from the AppDelegate's internal task pool
     func removeTask(_ task: NineAnimatorAsyncTask?) {
-        if let task = task {
-            let wrapper = HashingTaskWrapper(wrapped: task)
-            taskPool.remove(wrapper)
-        }
+        guard let task = task else { return }
+        let wrapper = TaskWrapper(wrapped: task)
+        taskPool.remove(wrapper)
     }
 }
 
